@@ -18,14 +18,6 @@ var windSpeedEl = $(".windSpeed");
 var uvIndexEl = $(".uvIndex");
 var cardRow = $(".card-row");
 
-// var lsKey = "weatherSearches"
-// var currentWeatherDiv = $("#currentWeather");
-// var forecastDiv = $("#forecast");
-// var clearBtn = $("#clear");
-// var metricUnits = {deg:"C", speed:"KPH"};
-// var impUnits = {deg:"F",speed:"MPH"};
-// var units = metricUnits;
-
 // current date variables
 var today = moment().format("MMMM Do YYYY")
 
@@ -118,7 +110,6 @@ function getWeather(desiredCity) {
               renderWeatherData(cityObj.cityName, cityObj.cityTemp, cityObj.cityHumidity, cityObj.cityWindSpeed, renderedWeatherIcon, uvData.value);
               renderSearchHistory(cityObj.cityName);
           }else{
-              console.log("City already in searchHistory. Not adding to history list")
               var renderedWeatherIcon = `https:///openweathermap.org/img/w/${cityObj.cityWeatherIconName}.png`;
               renderWeatherData(cityObj.cityName, cityObj.cityTemp, cityObj.cityHumidity, cityObj.cityWindSpeed, renderedWeatherIcon, uvData.value);
           }
@@ -135,19 +126,20 @@ function getWeather(desiredCity) {
           url: queryUrl,
           method: "GET"
       })
-      .then(function(fiveDayReponse) {
-          for (var i = 0; i != fiveDayReponse.list.length; i+=8 ) {
+      .then(function(fiveDayResponse) {
+          for (var i = 0; i != fiveDayResponse.list.length; i+=8 ) {
               var cityObj = {
-                  date: fiveDayReponse.list[i].dt_txt,
-                  icon: fiveDayReponse.list[i].weather[0].icon,
-                  temp: fiveDayReponse.list[i].main.temp,
-                  humidity: fiveDayReponse.list[i].main.humidity
+                  date: fiveDayResponse.list[i].dt_txt,
+                  icon: fiveDayResponse.list[i].weather[0].icon,
+                  temp: fiveDayResponse.list[i].main.temp,
+                  humidity: fiveDayResponse.list[i].main.humidity
               }
               var dateStr = cityObj.date;
               var trimmedDate = dateStr.substring(0, 10); 
-              var weatherIco = `https:///openweathermap.org/img/w/${cityObj.icon}.png`;
-              createForecastCard(trimmedDate, weatherIco, cityObj.temp, cityObj.humidity);
+              var weatherIcon = `https:///openweathermap.org/img/w/${cityObj.icon}.png`;
+              createForecastCard(trimmedDate, weatherIcon, cityObj.temp, cityObj.humidity);
           }
+          console.log(fiveDayResponse)
       })
   }   
 }
