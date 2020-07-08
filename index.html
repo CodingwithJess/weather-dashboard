@@ -8,19 +8,45 @@
   <!-- bootstrap CDN -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <!-- personal stylesheet -->
-  <link style="stylesheet" href ="Assets/style.css">
-  <title>Document</title>
+  <link rel="stylesheet" href ="Assets/style.css">
+  <title>Weather Dashboard</title>
 </head>
 <body>
-  
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#"> <i class="fas fa-sun"></i> Weather Dashboard <i class="far fa-snowflake"></i></a>
+  </nav>
+
+    <div class="container-fluid">
+      <div class="row mt-3">
+        <!-- Search Bar Area -->
+        <div class="col-md-3 searcharea">
+          <h2 class="text-secondary">Search for a city:</h2>
+          <div class="input-group mb-3">
+          </div>
+            <input type="text" class="form-control" id="searchinput" type="search" aria-label="Search">
+            <div class="input-group-append">
+              <!-- Search Button -->
+              <button class="btn btn-primary" id="searchbtn" type="submit"><i class="fas fa-search"> Search</i></button>
+            </div>
+        <!--Area Showing Previously Search Cities Here  -->
+        <div class="mt-5" id="prevSearches">
+        </div>
+
+        <!-- Weather for current location -->
+        <div class="container" id="earthforecast">
+          
+        </div>
+
+        </div>
+      </div>
+    </div>  
 
 
-
-
-
-
-
-
-  <script src="Assets/style.css"></script>
+<!-- jQuery, Bootstrap JS, moment.js -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="assets/script.js"></script>
 </body>
+
 </html>
