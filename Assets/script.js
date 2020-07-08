@@ -1,9 +1,14 @@
 // global variables
 var APIKey = "748841953b1647f23e37f49111c4e30a";
+var searchBtn = $(".searchBtn");
+var searchInput = $(".searchInput");
+
+// left column
+var cityNameEl = $(".cityName");
+var currentDateEl = $(".currentDate")
+
 var lsKey = "weatherSearches"
 var searchesDiv = $("#searches");
-var searchInput = $("#searchInput");
-var searchButton = $("#searchBtn");
 var currentWeatherDiv = $("#currentWeather");
 var forecastDiv = $("#forecast");
 var clearBtn = $("#clear");
