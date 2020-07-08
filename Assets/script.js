@@ -5,32 +5,42 @@ var searchInput = $(".searchInput");
 
 // left column
 var cityNameEl = $(".cityName");
-var currentDateEl = $(".currentDate")
-
-var lsKey = "weatherSearches"
-var searchesDiv = $("#searches");
-var currentWeatherDiv = $("#currentWeather");
-var forecastDiv = $("#forecast");
-var clearBtn = $("#clear");
-var storedSearches = getStoredSearches();
-//variable used to store and determine if the city needs to be added to the search history
-var addedCity = newCity();
-//unit variables for future development of switching between unit systems.
-var metricUnits = {deg:"C", speed:"KPH"};
-var impUnits = {deg:"F",speed:"MPH"};
-var units = metricUnits;
+var currentDateEl = $(".currentDate");
+var weatherIconEl= $(".weatherIcon");
+var searchHistoryEl= $(".historyItems");
 
 
+// right column
+
+var tempEl = $(".temp");
+var humidityEl = $(".humidity");
+var windSpeedEl = $(".windSpeed");
+var uvIndexEl = $(".uvIndex");
+var cardRow = $(".card-row");
+
+// var lsKey = "weatherSearches"
+// var currentWeatherDiv = $("#currentWeather");
+// var forecastDiv = $("#forecast");
+// var clearBtn = $("#clear");
+// var metricUnits = {deg:"C", speed:"KPH"};
+// var impUnits = {deg:"F",speed:"MPH"};
+// var units = metricUnits;
+
+// current date variables
+var today = moment().format("MMMM Do YYYY")
 
 
 
-function searchButtonClicked(){  
-  var cityVal = searchInput.val().trim();
-  var city = newCity(cityVal, null);       
-  getWeather(city);
-  //clear the value once the search is activated
-  searchInput.val("");        
-}
+
+searchBtn.on("click", function(e) {
+  e.preventDefault();
+  if (searchInput.val() === "") {
+      alert("You must enter a city");
+      return;
+  }
+  console.log("clicked button")
+  getWeather(searchInput.val());
+});
 
 function getWeather(city){
   addedCity = city; 
