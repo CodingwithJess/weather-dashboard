@@ -16,30 +16,32 @@
     <a class="navbar-brand" href="#"> <i class="fas fa-sun"></i> Weather Dashboard <i class="far fa-snowflake"></i></a>
   </nav>
 
-    <div class="container-fluid">
-      <div class="row mt-3">
-        <!-- Search Bar Area -->
-        <div class="col-md-3 searcharea">
-          <h2 class="text-secondary">Search for a city:</h2>
-          <div class="input-group mb-3">
-          </div>
-            <input type="text" class="form-control" id="searchinput" type="search" aria-label="Search">
-            <div class="input-group-append">
-              <!-- Search Button -->
-              <button class="btn btn-primary" id="searchbtn" type="submit"><i class="fas fa-search"> Search</i></button>
+  <div class="container">
+    
+    <div class="main-body">
+        <div class="left-content">
+            <h3>Search for a City:</h3>
+            <div class="search-bar">
+                <input class="input" type="text"></input>
+                <button type="button"class="btn btn-info"><i class="fas fa-search"></i></button>
             </div>
-        <!--Area Showing Previously Search Cities Here  -->
-        <div class="mt-5" id="prevSearches">
-        </div>
+            <div class="previousSearch">
 
-        <!-- Weather for current location -->
-        <div class="container" id="earthforecast">
-          
+            </div>
         </div>
+        <div class="right-content">
+            <div class="top-display">
 
+            </div>
+            <div class="middle-display">
+
+            </div>
+            <div class="bottom-display">
+
+            </div>
         </div>
-      </div>
-    </div>  
+    </div>
+</div> 
 
 
 <!-- jQuery, Bootstrap JS, moment.js -->
