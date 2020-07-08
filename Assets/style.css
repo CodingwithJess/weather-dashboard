@@ -20,3 +20,26 @@ body{
 h1,h2,h3,h4{
 margin:0;  
 }
+
+.wrapper{
+  align-items: stretch;
+  
+}
+#inputGroup{
+  display:flex;
+  justify-content:stretch;
+  align-content: stretch;
+  flex-wrap: wrap-reverse;
+}
+#searchPanel{    
+  padding: 10px 10px 0 10px;
+  width: 320px;
+  margin-bottom:0;
+  background-color: rgb(242, 242, 242);      
+  height: 100%;   
+  position: fixed;
+  z-index: 1;    
+  overflow-x: hidden;    
+  padding-top: 20px;
+  top:78px;
+}
