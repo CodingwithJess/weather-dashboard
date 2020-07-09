@@ -5,37 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- fontAwesome CDN -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
-  <!-- bootstrap CDN -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <!-- GoogleFonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poiret+One&display=swap" rel="stylesheet">
   <!-- personal stylesheet -->
   <link rel="stylesheet" href ="Assets/style.css">
   <title>Weather Dashboard</title>
 </head>
 <body>
   <header class="header">
-    <h1>Weather Dashboard</h1>
+    <h1 id="header"><i class="fas fa-cloud-sun-rain"></i> Weather Dashboard   <i class="fas fa-temperature-high"></i></h1>
 </header>
 
 <div class="container">
     <div class="search">
         <div class="row">
-            <h1>Search for a City:</h1>
+            <h2>Search for a City:</h2>
         </div>
         <div class="row">
-            <input type="text" class="searchInput" placeholder="'Denver' or 'Miami'">
-            <button type="submit" class="searchBtn">
-            <i class="fas fa-search"></i>
-            </button>
+            <input type="text" class="searchInput" placeholder="  'Denver' or 'Miami'">
+            <button type="submit" class="searchBtn"><i class="fas fa-search"></i></button>
         </div>
         <div class="historyItems"></div>
     </div>
+
     <div class="col-two-container">
         <div class="forecast">
             <div class="row">
-                <h1 class="cityName">City Name</h1>
-                <h1 class="currentDate"></h1>
+                <h2 class="cityName">City Name</h2>
+                <h2 class="currentDate"></h2>
                 <img class="weatherIcon"></img>
             </div>
+            <hr/>
             <div class="row">
                 <p class="temp">Temperature:</p>
             </div>
@@ -48,10 +48,12 @@
             <div class="row">
                 <p class="uvIndex">UV Index:</p>
             </div>
+            <hr/>
         </div>
-
+        <br/>
+        <br/>
         <div class="five-day-container">
-            <h1>5-Day Forecast:</h1>
+            <h1 id="fiveDay">Five Day Forecast:</h1>
             <div class="card-row">
             </div>
         </div>
